@@ -16,10 +16,21 @@ class Login implements \Magento\Framework\Event\ObserverInterface
      * @param \Magento\Framework\Event\Observer $observer
      * @return void
      */
+    protected $logger;
+    
+    public function __construct(
+        \Psr\Log\LoggerInterface $logger
+        ) {
+            $this->logger = $logger;
+    }
+    
     public function execute(
         \Magento\Framework\Event\Observer $observer
     ) {
-        //Your observer code
+        $customer = $observer->getEvent()->getCustomer();
+        echo $customer->getEmail(); //Get customer Email
+        echo $customer->getName(); //Get customer Name
+        $this->logger->notice('ChinhisLOG::User '.$customer->getName().' email:'.$customer->getEmail(). ' event: logined');
     }
 }
 
