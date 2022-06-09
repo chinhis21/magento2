@@ -28,9 +28,7 @@ class Login implements \Magento\Framework\Event\ObserverInterface
         \Magento\Framework\Event\Observer $observer
     ) {
         $customer = $observer->getEvent()->getCustomer();
-        echo $customer->getEmail(); //Get customer Email
-        echo $customer->getName(); //Get customer Name
-        $this->logger->notice('ChinhisLOG::User '.$customer->getName().' email:'.$customer->getEmail(). ' event: logined');
+        $this->logger->notice('ChinhisLOG::ObServer User '.$customer->getName().' email:'.$customer->getEmail(). ' event: logined');
     }
 }
 

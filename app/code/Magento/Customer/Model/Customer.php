@@ -471,7 +471,7 @@ class Customer extends \Magento\Framework\Model\AbstractModel
     public function getName()
     {
         $name = '';
-
+        
         if ($this->_config->getAttribute('customer', 'prefix')->getIsVisible() && $this->getPrefix()) {
             $name .= $this->getPrefix() . ' ';
         }

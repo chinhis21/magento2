@@ -210,6 +210,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Chinhis_EAVattr' => 1,
         'Chinhis_TestOBserver' => 1,
-        'Chinhis_TestPlugin' => 1
+        'Chinhis_TestPlugin' => 1,
+        'Chinhis_TestPreference' => 1
     ]
 ];
