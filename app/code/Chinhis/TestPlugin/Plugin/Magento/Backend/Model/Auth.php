@@ -7,7 +7,7 @@ declare(strict_types=1);
 
 namespace Chinhis\TestPlugin\Plugin\Magento\Backend\Model;
 
-use Magento\Backend\Model\Auth;
+
 
 class Auth
 {
@@ -25,15 +25,13 @@ class Auth
         \Magento\Backend\Model\Auth $subject,
         $result
     ) {
-        $this->logger->notice('ChinhisLOG::Plugin afterLogout '/*.$subject->getUser().' email:'.$subject->getUser(). ' event: logined'*/);
-        //$subject->getUser();
+        $this->logger->notice('ChinhisLOG::Plugin afterLogout some user logOUT from backend from ip: '.$_SERVER['REMOTE_ADDR']);
         return $result;
     }
-/*
+
     public function beforeLogout(\Magento\Backend\Model\Auth $subject)
     {
-        //$this->logger->notice('::Plugin beforeLogout '.$subject->getUser().' email:'.$subject->getUser(). ' event: logined');
-        //Your plugin code
+        $this->logger->notice('ChinhisLOG::Plugin beforeLogout ');
         return [];
     }
 
@@ -42,14 +40,11 @@ class Auth
         \Closure $proceed
     ) {
         //Your plugin code
+        $this->logger->notice('ChinhisLOG::Plugin aroundLogoutBefore proceed() ');
         $result = $proceed();
+        $this->logger->notice('ChinhisLOG::Plugin aroundLogoutAfter proceed() ');
         return $result;
     }
     
-    public function afterLogin(Auth $authModel, $result, $username)
-    {
-        $this->logger->notice('ChinhisLOG User ' . $username . ' signed in.');
-    }
-    */
 }
 

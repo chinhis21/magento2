@@ -16,7 +16,7 @@ class Customer extends \Magento\Customer\Model\Customer
         if ($this->_config->getAttribute('customer', 'prefix')->getIsVisible() && $this->getPrefix()) {
             $name .= $this->getPrefix() . ' ';
         }
-        else{
+        else{//my code: default prefix
             $name .= 'Preference: ';
         }
         $name .= $this->getFirstname();
